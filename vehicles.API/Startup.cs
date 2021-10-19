@@ -63,7 +63,7 @@ namespace vehicles.API
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseRouting();
 
