@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using vehicles.API.Common.Enums;
 using vehicles.API.Data.Entities;
@@ -27,7 +26,7 @@ namespace vehicles.API.Data
             await checkDocumentTypesAsync();
             await checkProceduresAsync();
             await checkRolesAsync();
-            await checkUserAsync("1010","Santiago","Murillo","santiago@yopmail.com","3217543188","Calle 11",UserType.User);
+            await checkUserAsync("1010", "Santiago", "Murillo", "santiago@yopmail.com", "3217543188", "Calle 11", UserType.User);
             await checkUserAsync("1010", "Luis", "Salazar", "luis@yopmail.com", "311 322 4620", "Calle Luna Calle Sol", UserType.Admin);
             await checkUserAsync("2020", "Juan", "Zuluaga", "zulu@yopmail.com", "311 322 4620", "Calle Luna Calle Sol", UserType.User);
             await checkUserAsync("3030", "Ledys", "Bedoya", "ledys@yopmail.com", "311 322 4620", "Calle Luna Calle Sol", UserType.User);

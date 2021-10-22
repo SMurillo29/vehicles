@@ -2,13 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 using vehicles.API.Common.Enums;
 
 namespace vehicles.API.Data.Entities
 {
-    public class User :IdentityUser
+    public class User : IdentityUser
     {
         [Display(Name = "Nombres")]
         [MaxLength(50, ErrorMessage = "El campo {0} no debe tener mas de {1} caracteres.")]
@@ -31,7 +29,7 @@ namespace vehicles.API.Data.Entities
         public string Document { get; set; }
 
         [Display(Name = "Dirección")]
-        [MaxLength(100, ErrorMessage = "El campo {0} no debe tener mas de {1} caracteres.")]       
+        [MaxLength(100, ErrorMessage = "El campo {0} no debe tener mas de {1} caracteres.")]
         public string Address { get; set; }
 
         [Display(Name = "Foto")]
@@ -39,7 +37,7 @@ namespace vehicles.API.Data.Entities
 
         [Display(Name = "Foto")]
         public string ImageFullPath => ImageId == Guid.Empty
-            ? $"https://localhost:44356/images/noimage.png"
+            ? $"https://localhost:44356/images/no-image.png"
             : $"https://vehicleszulu.blob.core.windows.net/users/{ImageId}";
 
         [Display(Name = "Tipo de usuario")]
@@ -47,5 +45,11 @@ namespace vehicles.API.Data.Entities
 
         [Display(Name = "Usuario")]
         public string FullName => $"{FirstName} {LastName}";
+
+        public ICollection<Vehicle> vehicles { get; set; }
+
+        public int VehiclesCount => vehicles == null ? 0 : vehicles.Count;
+
+        //  public ICollection<History> Histories { get; set; }
     }
 }

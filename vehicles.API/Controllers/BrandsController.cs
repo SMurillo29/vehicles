@@ -9,7 +9,7 @@ using vehicles.API.Data.Entities;
 namespace vehicles.API.Controllers
 {
 
-   // [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class BrandsController : Controller
     {
         private readonly DataContext _context;
